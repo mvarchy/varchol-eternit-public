@@ -56,6 +56,12 @@ Aby to příští session neopravila jako chybu.
 ## Changelog
 Nejnovější nahoře.
 
+### 2026-10-25: Doostření hlavní fotky v hero
+- **Co:** `public/fotky/hero/hero-zakazka.webp` zvětšena z 739×344 na 2217×1032 (Lanczos), lehké odšumění a doostření, WebP q84 (~318 kB). Původní soubor je v gitu.
+- **Proč:** Na prosbu klienta. Zdroj byl příliš malý na šířku hero, takže se rozmazával.
+- **Dopad:** Hrany jsou čistší, ale nový detail to nepřidá. Skutečné řešení je větší originál od klienta (min. 2400 px na šířku). Kód Hero beze změny.
+- **Soubory:** `public/fotky/hero/hero-zakazka.webp`
+
 ### 2026-10-19: Push a produkční nasazení
 - **Co:** Commit `c10baaa` a následná oprava `1c6a3de` pushnuty na `main`; GitHub hlásí úspěšný Vercel build. V prohlížeči ověřen nový obsah, funkční fotky, odkazy a ovládání.
 - **Proč:** Na výslovný pokyn uživatele.

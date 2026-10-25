@@ -25,7 +25,7 @@ export const site = {
   /** Malířský web klienta, odkaz ve Spolupráci. Ověřit, že ho klient chce propojit. */
   paintingWebUrl: "https://www.malirske-nateracske-prace-litomerice.cz",
   seo: {
-    title: "Likvidace eternitu a azbestu Litoměřice | Michal Varchol",
+    title: "Likvidace eternitu, azbestu a pronájem lešení Litoměřice | Michal Varchol",
     description:
       "Bezpečná demontáž eternitových střech a likvidace azbestového odpadu. Litoměřice, Ústecký, Liberecký a Středočeský kraj. Pronájem lešení.",
   },

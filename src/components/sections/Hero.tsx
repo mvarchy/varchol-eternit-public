@@ -40,7 +40,7 @@ export function Hero() {
           className="mt-8 flex flex-col gap-8 md:flex-row md:items-end md:justify-between"
         >
           <p className="max-w-lg text-[21px] font-semibold leading-relaxed text-paper">
-            Likvidace eternitu a azbestu v Litoměřicích a okolí. Demontujeme střechy bezpečně, podle předpisů a s ohledem na zdraví lidí i ochranu přírody. Pronájem lešení v Litoměřicích zajistíme také.
+            Likvidace eternitu a azbestu v Litoměřicích a okolí. Demontujeme střechy bezpečně, podle předpisů a s ohledem na zdraví lidí i ochranu přírody. Pronájem lešení zajistíme také.
           </p>
           <div className="flex flex-wrap items-center gap-3 lg:mr-16 xl:mr-24">
             <CallButton variant="mint" />

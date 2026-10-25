@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { projects, type Project } from "@/data/projects";
+import { formatDate, projects, type Project } from "@/data/projects";
 import { Photo } from "@/components/ui/Photo";
 import { Lightbox } from "@/components/ui/Lightbox";
 import { ProjectDashboard } from "@/components/ui/ProjectDashboard";
@@ -50,7 +50,10 @@ export function Gallery() {
                 <span className="font-wide text-[19px] font-extrabold group-hover:text-green-text">{p.title}</span>
                 <span className="shrink-0 text-[13px] font-semibold text-ink-soft">{photoCount(p.photos.length)}</span>
               </span>
-              <span className="mt-2 block text-[14px] text-ink-soft">{p.place}</span>
+              <span className="mt-2 flex items-baseline justify-between gap-4 text-[14px] text-ink-soft">
+                <span>{p.place}</span>
+                {p.date && <time dateTime={p.date}>{formatDate(p.date)}</time>}
+              </span>
             </button>
           </li>
         ))}

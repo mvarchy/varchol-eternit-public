@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import type { Project } from "@/data/projects";
+import { formatDate, type Project } from "@/data/projects";
 import { Photo } from "./Photo";
 
 type Props = {
@@ -38,7 +38,14 @@ export function ProjectDashboard({ project, onOpenPhoto, onClose }: Props) {
           <div className="flex items-start justify-between gap-4 border-b border-line pb-5">
             <div>
               <h3 className="font-wide text-[clamp(1.4rem,3vw,2rem)] font-extrabold">{project.title}</h3>
-              <p className="mt-1 text-[14px] text-ink-soft">{project.place}</p>
+              <p className="mt-1 text-[14px] text-ink-soft">{project.place}
+                {project.date && (
+                  <>
+                    {" · "}
+                    <time dateTime={project.date}>{formatDate(project.date)}</time>
+                  </>
+                )}
+              </p>
             </div>
             <button
               type="button"
