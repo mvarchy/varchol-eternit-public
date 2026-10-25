@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { nav, site } from "@/data/site";
 import { CallButton } from "./CallButton";
 import { EmailButton } from "./EmailButton";
+import { BrandLogo } from "./BrandLogo";
 
 /** Pevná hlavička s kotvovou navigací a scrollspy. */
 export function Header() {
@@ -58,9 +59,8 @@ export function Header() {
         Přeskočit na obsah
       </a>
       <div className="mx-auto flex h-[4.5rem] max-w-[90rem] items-center justify-between gap-6 px-4 sm:px-6 lg:px-10">
-        <a href="#" className="group flex flex-col leading-none" aria-label={`${site.ownerName}, zpět nahoru`}>
-          <span className="font-wide text-[22px] font-black uppercase tracking-[-0.01em]">{site.wordmark}</span>
-          <span className="mt-1 text-[10.5px] font-bold uppercase tracking-[0.22em] text-green-text">{site.wordmarkSub}</span>
+        <a href="#" className="shrink-0" aria-label={`${site.ownerName}, zpět nahoru`}>
+          <BrandLogo />
         </a>
 
         <nav aria-label="Hlavní navigace" className="hidden xl:block">

@@ -25,7 +25,7 @@ export function Collaboration() {
           </a>
         </div>
 
-        <div className="relative mx-auto w-full max-w-[34rem]" style={{ aspectRatio: "5 / 6" }}>
+        <div className="relative mx-auto w-full max-w-[34rem]" style={{ aspectRatio: "5 / 6.4" }}>
           {paintingCollage.map((tile) => (
             <div
               key={tile.src}

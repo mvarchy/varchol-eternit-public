@@ -20,7 +20,8 @@ Nepřehodnocují se bez výslovného pokynu uživatele. Převzato z `AGENTS.md` 
 - **2026-10-19:** Uživatel potvrdil statistiky 30+ dokončených zakázek, 100 % spokojených klientů a 3+ roky praxe. Potvrdil také novou referenci z Libochovic a kontakty převzaté z malířského webu (telefon, e-mail, IČO, adresa) pro použití na webu o eternitu.
 - **2026-10-19:** Sekce O nás byla odstraněna; navigace a seznam kotviček odpovídají aktuální struktuře.
 - **2026-10-18:** Akcent webu je přesná zelená z dodaného obrázku `#5ED33F` (na pokyn uživatele, nahrazuje `#1F7A3E` a `#4FD07D`). Na bílé se tato zelená jako text nesmí použít (kontrast 1,9:1), text a obrysy jdou v `#317C1D`, tlačítka mají tmavý text. Hero zesvětlený (překryv ink/80 → ink/10).
-- **2026-10-12:** Bez loga. Inspirace likvidace-eternitu.org (zelená, černá), přebírá se jen směr, ne copy ani layout 1:1. Zdroj: poznámky uživatele v Pages.
+- **2026-10-12:** Původní návrh byl bez loga; nahrazeno rozhodnutím 2026-10-25, kdy uživatel dodal logo a požádal o jeho použití.
+- **2026-10-25:** Uživatelem dodané logo VARCHOL – ETERNIT · AZBEST je použito místo textového wordmarku v hlavičce a patičce.
 - **2026-10-12:** `AGENTS.md` je jediný zdroj pravidel pro všechny agenty, `CLAUDE.md` na něj má jen odkazovat. Rozhodla jiná session při paralelní práci, zde zaznamenáno.
 - **2026-10-12:** Paměť žije ve skryté složce `.memory/`, ne v `memory/`. Důvod: složku takto založil uživatel.
 - **2026-10-12:** Skills jsou jednou, v `.claude/skills/`. `.agents/skills` je symlink, aby Codex, Cursor a další četly totéž a kopie se nerozešly.
@@ -55,6 +56,24 @@ Aby to příští session neopravila jako chybu.
 
 ## Changelog
 Nejnovější nahoře.
+
+### 2026-10-25: Nasazení dodaného loga do šablony
+- **Co:** Uživatelem dodané SVG logo bylo přidáno do `public/logo/` a nahradilo textový wordmark v hlavičce i patičce. Vektor se zobrazuje přes komponentu `Photo` bez optimalizace.
+- **Proč:** Na výslovný pokyn uživatele, který nahradil původní rozhodnutí web bez loga.
+- **Dopad:** Identita v hlavičce a patičce; favicon zůstává beze změny.
+- **Soubory:** `public/logo/varchol-logo-vektor.svg`, `src/components/ui/BrandLogo.tsx`, `src/components/ui/{Header,Footer,Photo}.tsx`, `src/data/site.ts`
+
+### 2026-10-25: Dvě fotografie do sekce Spolupráce
+- **Co:** Do koláže malířských prací přidány fotografie renovované pergoly a práce na žlutém dílu. Kvůli nedostupnosti zdrojového webu byly čisté výřezy pořízeny z uživatelem dodaných screenshotů (500×420 px); kompozice osmi fotografií byla přeskupena a mírně prodloužena.
+- **Proč:** Na pokyn uživatele; nové záběry rozšiřují ukázky malířských a renovačních prací.
+- **Dopad:** Jen sekce Spolupráce. Rozlišení nových záběrů vychází ze screenshotů; originální soubory je možné později nahradit.
+- **Soubory:** `src/components/sections/Collaboration.tsx`, `src/data/paintingCollage.ts`, `public/fotky/malirske-prace/pergola.webp`, `public/fotky/malirske-prace/priprava-zlutych-dilu.webp`
+
+### 2026-10-25: Responzivní úprava hero sekce
+- **Co:** Viewport byl nastaven výslovně na šířku zařízení a měřítko 1. Nadpis a úvodní text hero sekce nyní škálují na úzkých displejích; kontaktní tlačítka a odkaz se na mobilu skládají pod sebe přes celou šířku obsahu.
+- **Proč:** Mobilní screenshot ukázal nevyvážené měřítko a rozvržení.
+- **Dopad:** Mobilní hlavička a hero; desktopové rozložení tlačítek zůstává od breakpointu `sm` v řádku.
+- **Soubory:** `src/app/layout.tsx`, `src/components/sections/Hero.tsx`
 
 ### 2026-10-25: Koláž fotek ve Spolupráci
 - **Co:** Placeholder ve sloupci sekce Spolupráce (Malířské práce) nahrazen koláží šesti částečně se překrývajících fotek (dřevěná fasáda, schodiště, stropní lišta, žlutá a šedá místnost, broušení stropu). Fotky jsou z malířského webu klienta malirske-nateracske-prace-litomerice.cz, převedené na webp do `public/fotky/malirske-prace/`.

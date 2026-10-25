@@ -1,5 +1,6 @@
 import { nav, site } from "@/data/site";
 import { WaveEdge } from "./Wave";
+import { BrandLogo } from "./BrandLogo";
 
 export function Footer() {
   return (
@@ -8,8 +9,7 @@ export function Footer() {
       <div className="bg-mist">
         <div className="mx-auto grid max-w-[90rem] gap-10 px-4 py-14 sm:px-6 md:grid-cols-[1.2fr_2fr] lg:px-10">
           <div>
-            <p className="font-wide text-[26px] font-black uppercase">{site.wordmark}</p>
-            <p className="mt-1 text-[11px] font-bold uppercase tracking-[0.22em] text-green-text">{site.wordmarkSub}</p>
+            <BrandLogo />
             <p className="mt-5 text-[14px] leading-relaxed text-ink-soft">
               {site.ownerName}, {site.town}
               <br />

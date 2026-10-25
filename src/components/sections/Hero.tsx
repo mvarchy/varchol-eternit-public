@@ -18,7 +18,7 @@ export function Hero() {
       />
 
       <div className="relative mx-auto flex min-h-[min(86svh,52rem)] max-w-[90rem] flex-col justify-end px-4 pb-20 pt-24 sm:px-6 lg:px-10 lg:pb-28">
-        <h1 id="hero-title" className="font-display text-[clamp(2.5rem,8vw,6.4rem)] font-black uppercase leading-[0.88] tracking-[-0.02em] [font-stretch:100%]">
+        <h1 id="hero-title" className="font-display text-[clamp(2.25rem,10vw,6.4rem)] font-black uppercase leading-[0.88] tracking-[-0.02em] [font-stretch:100%] sm:text-[clamp(2.5rem,8vw,6.4rem)]">
           {lines.map((line, i) => (
             <span key={line} className="block overflow-hidden pb-[0.04em]">
               <motion.span
@@ -39,15 +39,15 @@ export function Hero() {
           transition={{ duration: 0.7, delay: 0.65 }}
           className="mt-8 flex flex-col gap-8 md:flex-row md:items-end md:justify-between"
         >
-          <p className="max-w-lg text-[21px] font-semibold leading-relaxed text-paper">
+          <p className="max-w-lg text-[clamp(1rem,4.7vw,1.3125rem)] font-semibold leading-relaxed text-paper">
             Likvidace eternitu a azbestu v Litoměřicích a okolí. Demontujeme střechy bezpečně, podle předpisů a s ohledem na zdraví lidí i ochranu přírody. Pronájem lešení zajistíme také.
           </p>
-          <div className="flex flex-wrap items-center gap-3 lg:mr-16 xl:mr-24">
-            <CallButton variant="mint" />
-            <EmailButton variant="mint" />
+          <div className="flex w-full flex-col items-stretch gap-3 sm:w-auto sm:flex-row sm:flex-wrap sm:items-center lg:mr-16 xl:mr-24">
+            <CallButton variant="mint" className="w-full justify-center sm:w-auto" />
+            <EmailButton variant="mint" className="w-full justify-center sm:w-auto" />
             <a
               href="#kde-pusobime"
-              className="inline-flex items-center px-5 py-3 text-[15px] font-bold text-paper underline decoration-paper/40 underline-offset-[6px] hover:decoration-mint"
+              className="inline-flex w-full items-center justify-center px-5 py-3 text-[15px] font-bold text-paper underline decoration-paper/40 underline-offset-[6px] hover:decoration-mint sm:w-auto"
             >
               Kam jezdíme
             </a>

@@ -13,8 +13,6 @@ export type Contact = {
 export const site = {
   /** Pravopis příjmení ověřit (Varchol / Varhol). */
   ownerName: "Michal Varchol",
-  wordmark: "Varchol",
-  wordmarkSub: "eternit · azbest",
   town: "Litoměřice",
   /** Doména zatím není známá. Do spuštění zůstává web neindexovaný (viz layout.tsx). */
   url: "https://www.doplnit-domenu.cz",
