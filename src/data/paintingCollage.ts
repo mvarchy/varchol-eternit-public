@@ -41,12 +41,12 @@ export const paintingCollage: CollageTile[] = [
   {
     src: "/fotky/malirske-prace/pergola.webp",
     alt: "Dřevěná pergola po renovaci",
-    left: 28,
-    top: 11,
-    width: 50,
+    left: 31,
+    top: 8,
+    width: 38,
     ratio: "500 / 420",
     rotate: -1,
-    z: 3,
+    z: 0,
   },
   {
     src: "/fotky/malirske-prace/zluta-stena.webp",
