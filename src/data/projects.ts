@@ -27,6 +27,7 @@ const dates: Record<string, string> = {
   "10-jencice": "2026-05-27",
   "11-repcice-trebusin": "2026-06-13",
   "12-hostka": "2026-08-16",
+  "13-libochovice": "2026-09-24",
   "14-chvalin-nove-dvory": "2026-10-19",
 };
 

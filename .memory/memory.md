@@ -56,6 +56,12 @@ Aby to příští session neopravila jako chybu.
 ## Changelog
 Nejnovější nahoře.
 
+### 2026-10-25: Datum realizace Libochovice
+- **Co:** Projektu Libochovice v galerii doplněno datum realizace 24. 9. 2026.
+- **Proč:** na pokyn uživatele.
+- **Dopad:** Izolované (zobrazí se v kartě projektu v Galerii).
+- **Soubory:** `src/data/projects.ts`
+
 ### 2026-10-25: Doostření hlavní fotky v hero
 - **Co:** `public/fotky/hero/hero-zakazka.webp` zvětšena z 739×344 na 2217×1032 (Lanczos), lehké odšumění a doostření, WebP q84 (~318 kB). Původní soubor je v gitu.
 - **Proč:** Na prosbu klienta. Zdroj byl příliš malý na šířku hero, takže se rozmazával.
