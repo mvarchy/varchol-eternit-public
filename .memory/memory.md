@@ -56,6 +56,12 @@ Aby to příští session neopravila jako chybu.
 ## Changelog
 Nejnovější nahoře.
 
+### 2026-10-25: Koláž fotek ve Spolupráci
+- **Co:** Placeholder ve sloupci sekce Spolupráce (Malířské práce) nahrazen koláží šesti částečně se překrývajících fotek (dřevěná fasáda, schodiště, stropní lišta, žlutá a šedá místnost, broušení stropu). Fotky jsou z malířského webu klienta malirske-nateracske-prace-litomerice.cz, převedené na webp do `public/fotky/malirske-prace/`.
+- **Proč:** Na pokyn uživatele.
+- **Dopad:** Jen sekce Spolupráce. Pozice a náklony tvoří data v `src/data/paintingCollage.ts`, rám má poměr 5 / 6 a škáluje se v procentech. Ověřeno na desktopu i v úzkém okně, bez horizontálního přetečení. Použití fotek z webu klienta předpokládá souhlas klienta (jde o jeho vlastní fotky).
+- **Soubory:** `src/components/sections/Collaboration.tsx`, `src/data/paintingCollage.ts`, `public/fotky/malirske-prace/`
+
 ### 2026-10-25: Datum realizace Libochovice
 - **Co:** Projektu Libochovice v galerii doplněno datum realizace 24. 9. 2026.
 - **Proč:** na pokyn uživatele.

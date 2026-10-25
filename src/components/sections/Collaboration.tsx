@@ -1,4 +1,5 @@
 import { site } from "@/data/site";
+import { paintingCollage } from "@/data/paintingCollage";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Photo } from "@/components/ui/Photo";
 
@@ -24,12 +25,30 @@ export function Collaboration() {
           </a>
         </div>
 
-        <Photo
-          label="malířské nebo natěračské práce na fasádě (dodá klient)"
-          alt="Malířské a natěračské práce na fasádě"
-          ratio="4 / 3"
-          sizes="(min-width: 1024px) 45vw, 100vw"
-        />
+        <div className="relative mx-auto w-full max-w-[34rem]" style={{ aspectRatio: "5 / 6" }}>
+          {paintingCollage.map((tile) => (
+            <div
+              key={tile.src}
+              className="absolute border-[5px] border-paper shadow-[0_6px_22px_rgba(14,18,15,0.18)]"
+              style={{
+                left: `${tile.left}%`,
+                top: `${tile.top}%`,
+                width: `${tile.width}%`,
+                aspectRatio: tile.ratio,
+                transform: `rotate(${tile.rotate}deg)`,
+                zIndex: tile.z,
+              }}
+            >
+              <Photo
+                src={tile.src}
+                alt={tile.alt}
+                label={tile.alt}
+                fill
+                sizes="(min-width: 1024px) 20vw, 45vw"
+              />
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
