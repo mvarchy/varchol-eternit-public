@@ -88,8 +88,8 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-3">
-          <EmailButton variant="green" className="hidden md:inline-flex" label="Napsat" />
-          <CallButton variant="green" className="hidden sm:inline-flex" label="Zavolat" />
+          <EmailButton variant="green" className="max-md:hidden" label="Napsat" />
+          <CallButton variant="green" label="Zavolat" />
           <button
             type="button"
             className="inline-flex h-11 w-11 items-center justify-center border border-line xl:hidden"
