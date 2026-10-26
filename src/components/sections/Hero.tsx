@@ -11,13 +11,15 @@ const lines = ["Likvidace", "eternitu", "a azbestu"];
 export function Hero() {
   return (
     <section aria-labelledby="hero-title" className="relative isolate mt-[4.5rem] overflow-hidden bg-ink text-paper">
-      <Photo src="/fotky/hero/hero-zakazka.webp" objectPosition="100% 0%" label="Úvodní fotka" alt="" sizes="100vw" tone="dark" fill preload />
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 bg-linear-100 from-ink/55 via-ink/20 to-transparent"
-      />
+      <div className="relative h-[min(75vw,60svh)] min-h-56 [--hero-pos:62%_50%] lg:[--hero-pos:100%_0%] lg:absolute lg:inset-0 lg:h-auto lg:min-h-0">
+        <Photo src="/fotky/hero/hero-zakazka.webp" objectPosition="var(--hero-pos)" label="Úvodní fotka" alt="" sizes="100vw" tone="dark" fill preload />
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 bg-linear-to-b from-transparent from-60% to-ink lg:bg-linear-100 lg:from-ink/55 lg:from-0% lg:via-ink/20 lg:to-transparent"
+        />
+      </div>
 
-      <div className="relative mx-auto flex min-h-[min(86svh,52rem)] max-w-[90rem] flex-col justify-end px-4 pb-20 pt-24 sm:px-6 lg:px-10 lg:pb-28">
+      <div className="relative mx-auto flex max-w-[90rem] flex-col justify-end px-4 pb-20 pt-6 sm:px-6 lg:min-h-[min(86svh,52rem)] lg:px-10 lg:pb-28 lg:pt-24">
         <h1 id="hero-title" className="font-display text-[clamp(2.25rem,10vw,6.4rem)] font-black uppercase leading-[0.88] tracking-[-0.02em] [font-stretch:100%] sm:text-[clamp(2.5rem,8vw,6.4rem)]">
           {lines.map((line, i) => (
             <span key={line} className="block overflow-hidden pb-[0.04em]">

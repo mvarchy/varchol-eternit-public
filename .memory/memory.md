@@ -69,6 +69,12 @@ Nejnovější nahoře.
 - **Dopad:** Jen sekce Spolupráce. Rozlišení nových záběrů vychází ze screenshotů; originální soubory je možné později nahradit.
 - **Soubory:** `src/components/sections/Collaboration.tsx`, `src/data/paintingCollage.ts`, `public/fotky/malirske-prace/pergola.webp`, `public/fotky/malirske-prace/priprava-zlutych-dilu.webp`
 
+### 2026-10-26: Hero na mobilu ukazuje pracovníka
+- **Co:** Pod breakpointem `lg` je fotka hero samostatný pruh nad textem (výška `min(75vw, 60svh)`, `object-position` 62 % 50 %, dole přechod do `ink`), text leží pod ní. Od `lg` beze změny (fotka za textem, `100% 0%`).
+- **Proč:** Na mobilu (hlavně na šířku) `object-cover` ořezával celý široký záběr na pravý okraj a pracovník, Litoměřice a slunce nebyly vidět.
+- **Dopad:** Jen hero na mobilu a tabletu do 1023 px. Ověřeno headless Chrome 390×844, 844×390 a 1440×900 (desktop shodný). Slunce zcela vpravo je na úzkém mobilu stále oříznuté.
+- **Soubory:** `src/components/sections/Hero.tsx`
+
 ### 2026-10-25: Responzivní úprava hero sekce
 - **Co:** Viewport byl nastaven výslovně na šířku zařízení a měřítko 1. Nadpis a úvodní text hero sekce nyní škálují na úzkých displejích; kontaktní tlačítka a odkaz se na mobilu skládají pod sebe přes celou šířku obsahu.
 - **Proč:** Mobilní screenshot ukázal nevyvážené měřítko a rozvržení.
