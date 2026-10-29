@@ -7,10 +7,10 @@ Co se opravdu stalo, aktuální stav a proč. Pravidla zápisu viz `pravidla.md`
 - **Fáze:** Fotky, reference, statistiky a ověřené kontakty nasazeny na Vercel 2026-10-19. Produkční kontrola našla chybu v kódování cest; opravená verze `1c6a3de` běží. Zbývá pravopis jména a vlastní doména.
 - **Stack:** Next.js 16 (App Router) + TypeScript, Tailwind CSS, Framer Motion, hosting Vercel potvrzený uživatelem 2026-10-19.
 - **Co existuje:** Next.js 16.4 + React 19.3 + Tailwind 4 + framer-motion 12. Sekce Hero, Stats, Služby, Kde působíme (SVG mapa krajů), Postup (časová osa), Reference, Galerie (projekty + lightbox na `<dialog>`), Spolupráce, Kontakt, hlavička se scrollspy a mobilním menu, patička. `robots.ts`, `sitemap.ts`, metadata. Sekce O nás byla odstraněna 2026-10-19.
-- **Brief chybí:** `varchol-claude-code-prompt.md` v kořeni není a prázdný je i `web-project-brief.md`. Kostra vznikla jen z `AGENTS.md` a z této paměti. Až brief dorazí, porovnat s ním.
+- **Brief:** zadání webu je v `web-project-brief.md` v kořeni.
 
 ## Klíčová rozhodnutí
-Nepřehodnocují se bez výslovného pokynu uživatele. Převzato z `AGENTS.md` §4 a §6 a z `CLAUDE.md` (stav k 2026-10-12), dál se vedou tady. Technické konvence (příkazy, struktura složek, pravidla kódu, kotvy) jsou v `AGENTS.md` §5 a sem se nekopírují.
+Nepřehodnocují se bez výslovného pokynu uživatele. Převzato z `AGENTS.md` §4 a §6 (stav k 2026-10-12), dál se vedou tady. Technické konvence (příkazy, struktura složek, pravidla kódu, kotvy) jsou v `AGENTS.md` §5 a sem se nekopírují.
 - **2026-10-12:** Next.js 16 místo čistého HTML/CSS. Důvod: velké množství fotek (optimalizace přes `next/image`, galerie jako data v `src/data/*`).
 - **2026-10-12:** Jednostránkový web (landing page) s kotvovou navigací a scrollspy. Záměrné a závazné.
 - **2026-10-12:** Bez kontaktního formuláře, rozhodnutí klienta. Kontakt jen telefonem (hlavní CTA) a e-mailem. Žádný backend, žádné API klíče.
@@ -22,9 +22,9 @@ Nepřehodnocují se bez výslovného pokynu uživatele. Převzato z `AGENTS.md` 
 - **2026-10-18:** Akcent webu je přesná zelená z dodaného obrázku `#5ED33F` (na pokyn uživatele, nahrazuje `#1F7A3E` a `#4FD07D`). Na bílé se tato zelená jako text nesmí použít (kontrast 1,9:1), text a obrysy jdou v `#317C1D`, tlačítka mají tmavý text. Hero zesvětlený (překryv ink/80 → ink/10).
 - **2026-10-12:** Původní návrh byl bez loga; nahrazeno rozhodnutím 2026-10-25, kdy uživatel dodal logo a požádal o jeho použití.
 - **2026-10-25:** Uživatelem dodané logo VARCHOL – ETERNIT · AZBEST je použito místo textového wordmarku v hlavičce a patičce.
-- **2026-10-12:** `AGENTS.md` je jediný zdroj pravidel pro všechny agenty, `CLAUDE.md` na něj má jen odkazovat. Rozhodla jiná session při paralelní práci, zde zaznamenáno.
+- **2026-10-12:** `AGENTS.md` je jediný zdroj pravidel pro všechny agenty. Rozhodla jiná session při paralelní práci, zde zaznamenáno.
 - **2026-10-12:** Paměť žije ve skryté složce `.memory/`, ne v `memory/`. Důvod: složku takto založil uživatel.
-- **2026-10-12:** Skills jsou jednou, v `.claude/skills/`. `.agents/skills` je symlink, aby Codex, Cursor a další četly totéž a kopie se nerozešly.
+- **2026-10-12:** Skills jsou jednou, v `.agents/skills/`, aby Codex, Cursor a další četly totéž a kopie se nerozešly.
 
 ## Zadání z poznámek (Pages „Eternit - web“, ~/Documents)
 Sekce webu: Hero (fotka Litoměřic, likvidace eternitu a azbestu, demontáž) · Co děláme (likvidace eternitu a azbestu, pronájem lešení) · Kde působíme (interaktivní mapa: Ústecký, Středočeský, Liberecký kraj) · Jak to děláme (animace postupu práce) · Reference · Galerie (po projektech, každý má úvodní fotku) · O nás · Spolupráce (propojení malířských prací a eternitu) · Kontakt (telefon, IČO, mapa).
@@ -39,7 +39,6 @@ Sekce webu: Hero (fotka Litoměřic, likvidace eternitu a azbestu, demontáž) �
 - Existuje web malířských prací (odkaz ve Spolupráci)?
 - Města v popiscích mapy.
 - Potvrzení domény.
-- Kde je brief? `AGENTS.md` i `CLAUDE.md` odkazují na `varchol-claude-code-prompt.md`, soubor v kořeni není. Vznikne skillem `web-project-brief`, nebo leží jinde? Prázdný `web-project-brief.md` v kořeni je asi zbytek, rozhodnout, jestli se smaže.
 - Složky `~/Downloads/likvidace-eternitu-azbestu-litomerice.cz-main` a `...-2.cz-main` (Drupal): původní web, zdroj fotek, nebo nesouvisí? Nic se z nich nepřebírá, dokud to není jasné.
 - Klíčová slova a cílení (Litoměřice, kraje) nejsou validovaná. Nevymýšlet, navrhnout kandidáty a ověřit v nástroji (skill `seo-collabim-keyword-loop`).
 - Mapa v Kontaktu: pouhý odkaz, nebo embed? Embed (Google, Mapy.cz) by vyžadoval `frame-src` v CSP.
@@ -52,10 +51,16 @@ Aby to příští session neopravila jako chybu.
 - **Bez JSON-LD schema.** Přidá se až z ověřených údajů (jméno, telefon, IČO, adresa).
 - **Bezpečnostní hlavičky a CSP nejsou nastavené.** Jen `poweredByHeader: false`. Celý základ přes `web-security-setup` najednou, ne po částech.
 - **`.codex/` je prázdná.** Codex čte `AGENTS.md` a skills z `.agents/skills`, vlastní konfigurace se zatím nepotřebuje.
-- **Živý stav je zatím i v `AGENTS.md` §6 a v `CLAUDE.md` §5.** Zůstalo tam, protože tyhle soubory paralelně upravuje jiná session. Podle `AGENTS.md` §8 při rozporu platí `.memory/memory.md`. Doporučené sjednocení (rozhodnout s uživatelem): obě sekce změnit na odkaz sem, jako u ostatních klientských webů.
+- **Živý stav je zatím i v `AGENTS.md` §6.** Zůstalo tam, protože tento soubor paralelně upravuje jiná session. Podle `AGENTS.md` §8 při rozporu platí `.memory/memory.md`. Doporučené sjednocení (rozhodnout s uživatelem): sekci změnit na odkaz sem, jako u ostatních klientských webů.
 
 ## Changelog
 Nejnovější nahoře.
+
+### 2026-10-29: Úklid souborů specifických pro jeden nástroj
+- **Co:** Smazán soubor s pokyny pro konkrétní nástroj a jeho složka s konfigurací: skills přesunuty do `.agents/skills/` (už ne symlink), bezpečnostní paměť do `.security/`. Skills `project-memory-system` a `web-project-brief` odstraněny. Z `AGENTS.md`, `.memory/`, `.security/`, `web-project-brief.md` a zbylých skills odstraněny související zmínky, cesty a odkazy opraveny.
+- **Proč:** Na výslovný pokyn uživatele.
+- **Dopad:** Pořadí čtení je `AGENTS.md` → `.memory/`. CI workflow čte `.security/security-check.sh`.
+- **Soubory:** `.agents/skills/*`, `.security/*`, `.memory/*`, `AGENTS.md`, `web-project-brief.md`, `.github/workflows/security.yml`
 
 ### 2026-10-25: Nasazení dodaného loga do šablony
 - **Co:** Uživatelem dodané SVG logo bylo přidáno do `public/logo/` a nahradilo textový wordmark v hlavičce i patičce. Vektor se zobrazuje přes komponentu `Photo` bez optimalizace.
@@ -103,8 +108,8 @@ Nejnovější nahoře.
 - **Co:** Commit `c10baaa` a následná oprava `1c6a3de` pushnuty na `main`; GitHub hlásí úspěšný Vercel build. V prohlížeči ověřen nový obsah, funkční fotky, odkazy a ovládání.
 - **Proč:** Na výslovný pokyn uživatele.
 - **Dopad:** Produkční alias `https://eternit-web-six.vercel.app/` zobrazuje nové fotky, reference a kontakty. Bez horizontálního přetečení při šířkách 390, 768 a 1440 px; konzole bez chyb/varování. Mobilní menu funguje Enter/Escape a klávesnicovou navigací, lightbox šipkou a Escape se vrací fokus, výběr kraje v mapě jde klávesnicí, `tel:`/`mailto:` odpovídají potvrzeným kontaktům.
-- **Omezení:** `.claude/security/security-check.sh` v lokálním prostředí skončil kódem 2, protože z něj nelze navázat spojení s URL; Vercel MCP vrací 403. Hlavičky jsou v `vercel.json`, jejich přijetí živým serverem tímto auditem nebylo potvrzeno. Vercel URL je chráněná přihlášením; veřejné spuštění čeká na vlastní doménu.
-- **Soubory:** `AGENTS.md`, `.memory/memory.md`, `.claude/security/`
+- **Omezení:** `.security/security-check.sh` v lokálním prostředí skončil kódem 2, protože z něj nelze navázat spojení s URL; Vercel MCP vrací 403. Hlavičky jsou v `vercel.json`, jejich přijetí živým serverem tímto auditem nebylo potvrzeno. Vercel URL je chráněná přihlášením; veřejné spuštění čeká na vlastní doménu.
+- **Soubory:** `AGENTS.md`, `.memory/memory.md`, `.security/`
 
 ### 2026-10-19: Oprava cest k fotkám po nasazení
 - **Co:** Odstraněno předběžné kódování URL v galerii (Next Image kóduje mezery samo) a opravena cesta službové fotky po přesunu do `galerie/`.
@@ -116,7 +121,7 @@ Nejnovější nahoře.
 - **Co:** Připraveny bezpečnostní hlavičky v `vercel.json`, `security.txt`, kontrola závislostí a sken tajemství v GitHub Actions, kopie kontrolního skriptu a aktualizován bezpečnostní stav. CSP čeká na ověření živého webu.
 - **Proč:** Projektová pravidla vyžadují bezpečnostní základ při nasazení; současný web je již živý a chráněný Vercel Authentication.
 - **Dopad:** Konfigurace je v produkci; živé ověření HTTP hlaviček neprošlo kvůli síťovému omezení. Veřejná dostupnost `security.txt` závisí na vlastní doméně a ochraně Vercelu.
-- **Soubory:** `vercel.json`, `public/.well-known/security.txt`, `.github/workflows/security.yml`, `.claude/security/`
+- **Soubory:** `vercel.json`, `public/.well-known/security.txt`, `.github/workflows/security.yml`, `.security/`
 
 ### 2026-10-19: Doplnění fotek a potvrzených údajů
 - **Co:** Projektové fotky jsou rozdělené na úvodní a galerijní snímky; doplněny reference, statistiky a kontakty. Uživatel potvrdil jejich přesnost i použití na webu. Sekce O nás byla odstraněna.
@@ -152,10 +157,10 @@ Nejnovější nahoře.
 - **Co:** Založen Next.js 16.4 (create-next-app, App Router, TS, Tailwind 4, ESLint, výchozí `cacheComponents`) a přidán framer-motion 12. Vznikly všechny sekce, datové soubory `src/data/*`, komponenta `Photo` s placeholdery, vlnovka (`Wave`) jako spodní hrana hero a linka pod nadpisy, SVG mapa krajů ze skriptu `scripts/geojson-to-svg.mjs`, lightbox na nativním `<dialog>`. Písma Archivo (s osou `wdth`, nadpisy rozšířené na 118 %) a Manrope přes `next/font`. Barvy jen jako tokeny v `globals.css` (`@theme`).
 - **Proč:** Na pokyn uživatele „začni s realizací“. Brief neexistuje, vycházelo se z `AGENTS.md` a této paměti.
 - **Dopad:** Stack beze změny. Nová závislost jen framer-motion (je ve stacku). `next.config.ts` má `turbopack.root`, protože v domovské složce leží cizí `package-lock.json`. Ověřeno v prohlížeči: desktop 1160 px, mobil 390 px bez vodorovného přetečení, scrollspy, mobilní menu, rozsvícení krajů, lightbox (šipky, Esc, návrat fokusu), konzole bez chyb. Opravena chyba hydratace u SVG `<title>`. `npm audit` hlásí 5 high zranitelností jen ve vývojovém řetězci eslint-config-next (braces), do produkce nejdou.
-- **Soubory:** `package.json`, `next.config.ts`, `tsconfig.json`, `eslint.config.mjs`, `.gitignore`, `src/**`, `scripts/geojson-to-svg.mjs`, `AGENTS.md` (§5 příkaz a složky, §6 fáze), `.claude/security/STATE.md`
+- **Soubory:** `package.json`, `next.config.ts`, `tsconfig.json`, `eslint.config.mjs`, `.gitignore`, `src/**`, `scripts/geojson-to-svg.mjs`, `AGENTS.md` (§5 příkaz a složky, §6 fáze), `.security/STATE.md`
 
 ### 2026-10-12: Založení pracovního prostředí
-- **Co:** Zkopírovány lokální skills (`web-security-setup`, `web-security-audit`, `web-security-review`, `web-security-memory`, `seo-complete-optimization`, `seo-ai-risk-guard`, `humanize-text-cs`, `web-project-brief`, `project-memory-system`) do `.claude/skills/`. `.agents/skills` je symlink na ně. Založeny `.memory/` a `.claude/security/`. V `project-memory-system` upraveny cesty z `memory/` na `.memory/`. Do `AGENTS.md` doplněny řádek s pořadím čtení a sekce 8 (paměť, skills, bezpečnost, SEO, pravidlo o právních tvrzeních), text jiné session nezměněn. Do `memory.md` převzat stav z `AGENTS.md` a `CLAUDE.md`.
+- **Co:** Zkopírovány lokální skills (`web-security-setup`, `web-security-audit`, `web-security-review`, `web-security-memory`, `seo-complete-optimization`, `seo-ai-risk-guard`, `humanize-text-cs`) do `.agents/skills/`. Založeny `.memory/` a `.security/`. Do `AGENTS.md` doplněny řádek s pořadím čtení a sekce 8 (paměť, skills, bezpečnost, SEO, pravidlo o právních tvrzeních), text jiné session nezměněn. Do `memory.md` převzat stav z `AGENTS.md`.
 - **Proč:** Na pokyn uživatele, stejná sada jako u ostatních klientských webů, přizpůsobená tomuhle projektu.
 - **Dopad:** Izolované, projekt zatím neobsahuje web. Skills vycházejí z verze v projektu UCIK (novější `security-check.sh`), `humanize-text-cs` z globální verze (má `references/patterns.md`).
-- **Soubory:** `.claude/skills/*`, `.agents/skills`, `.memory/*`, `AGENTS.md` (jen řádek o pořadí čtení a §8), `.claude/security/*`
+- **Soubory:** `.agents/skills/*`, `.agents/skills`, `.memory/*`, `AGENTS.md` (jen řádek o pořadí čtení a §8), `.security/*`

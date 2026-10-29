@@ -1,6 +1,6 @@
-# CLAUDE CODE PROMPT: web Michal Varchol – likvidace eternitu a azbestu Litoměřice
+# ZADÁNÍ: web Michal Varchol – likvidace eternitu a azbestu Litoměřice
 
-Zkopíruj celý tento dokument jako první zadání do Claude Code (nový projekt/repo).
+Zkopíruj celý tento dokument jako první zadání AI agentovi (nový projekt/repo).
 
 ---
 
@@ -28,7 +28,7 @@ Tohle je nejdůležitější pokyn celého briefu a musí ovlivnit každé rozho
 - Detaily, které dělají rozdíl: mikrointerakce při hoveru šité na obsah (ne generické `scale-105`), promyšlené přechody mezi sekcemi, autentický text.
 - Piš CSS/komponenty, jako by je člověk ladil desetkrát pixel po pixelu.
 
-Pokud si Claude Code není jistý, jestli prvek nepůsobí šablonovitě, má se zeptat nebo navrhnout originálnější variantu místo nejběžnějšího řešení. Pro designová rozhodnutí použij skill `frontend-design`, pokud je v Claude Code dostupný.
+Pokud si agent není jistý, jestli prvek nepůsobí šablonovitě, má se zeptat nebo navrhnout originálnější variantu místo nejběžnějšího řešení. Pro designová rozhodnutí použij skill `frontend-design`, pokud je dostupný.
 
 ---
 
@@ -108,7 +108,7 @@ Důvod volby: web bude mít **hodně fotek**. `next/image` zajistí automatickou
 
 ## 4. STRUKTURA OBSAHU (SEKCE V POŘADÍ)
 
-Layout vychází z odsouhlasené varianty **A** z Claude Design, se sjednoceným bílým pozadím.
+Layout vychází z odsouhlasené varianty **A**, se sjednoceným bílým pozadím.
 
 ### 0. Hlavička (sticky)
 - Vlevo wordmark **Michal Varchol**.
@@ -259,4 +259,4 @@ Web musí na první pohled působit jako **práce řemeslníka, který ví, co d
 
 ---
 
-**Poznámka pro Claude Code:** Piš čistý, komentovaný kód, drž konzistentní strukturu a pojmenování a připrav projekt tak, aby šlo skutečné fotky a texty vložit bez zásahu do struktury kódu. Před dokončením každé sekce si polož otázku: „Vypadá to jako záměrná práce pro tohoto klienta, nebo jako generická šablona?“ Pokud to druhé, přepracuj podle sekce 0.
+**Poznámka pro agenta:** Piš čistý, komentovaný kód, drž konzistentní strukturu a pojmenování a připrav projekt tak, aby šlo skutečné fotky a texty vložit bez zásahu do struktury kódu. Před dokončením každé sekce si polož otázku: „Vypadá to jako záměrná práce pro tohoto klienta, nebo jako generická šablona?“ Pokud to druhé, přepracuj podle sekce 0.

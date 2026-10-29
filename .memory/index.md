@@ -3,7 +3,7 @@
 Čti jako první v každé session, před jakoukoli prací. Tento soubor sám nemá žádný obsah, jen ukazuje, kde co je a v jakém stavu projekt je.
 
 ## 1. Stav projektu (jedna řádka)
-**Fáze:** Kostra hotová; fotky, reference, statistiky a kontakty doplněny či potvrzeny 2026-10-19. Probíhá nasazení na Vercel; čeká se na pravopis jména a doménu. Brief `varchol-claude-code-prompt.md` v kořeni stále není.
+**Fáze:** Kostra hotová; fotky, reference, statistiky a kontakty doplněny či potvrzeny 2026-10-19. Probíhá nasazení na Vercel; čeká se na pravopis jména a doménu. Brief je v `web-project-brief.md` v kořeni.
 Detail je vždy v `memory.md`, sekce „Aktuální stav“.
 
 ## 2. Systémové soubory
@@ -13,22 +13,18 @@ Detail je vždy v `memory.md`, sekce „Aktuální stav“.
 | `.memory/pravidla.md` | Pravidla, jak se paměť vede | Jen na výslovný pokyn uživatele |
 | `.memory/memory.md` | Stav, rozhodnutí, changelog, otevřené otázky | Po každé změně projektu |
 | `AGENTS.md` | Jediný zdroj pravidel pro všechny agenty: chování, kontext, konvence, lokální skills | Změní-li se pravidla, stack, struktura nebo konvence |
-| `CLAUDE.md` | Má jen odkazovat na `AGENTS.md` (zatím obsahuje i plný text, viz `memory.md`) | Jen na výslovné rozhodnutí uživatele |
-| `.claude/security/` | Bezpečnostní paměť (STATE, DECISIONS, CSP-LOG, AUDIT-LOG) | Při změně čehokoli bezpečnostního, viz skill `web-security-memory` |
+| `.security/` | Bezpečnostní paměť (STATE, DECISIONS, CSP-LOG, AUDIT-LOG) | Při změně čehokoli bezpečnostního, viz skill `web-security-memory` |
 
 ## 3. Přednost při rozporu
-Živý prompt uživatele → `AGENTS.md` → `.memory/pravidla.md` → `.memory/memory.md` (u živého stavu a rozhodnutí má `memory.md` přednost před sekcí 6 v `AGENTS.md`) → `CLAUDE.md`. Rozpor se nikdy nevyřeší potichu, vždy se nahlásí před akcí.
+Živý prompt uživatele → `AGENTS.md` → `.memory/pravidla.md` → `.memory/memory.md` (u živého stavu a rozhodnutí má `memory.md` přednost před sekcí 6 v `AGENTS.md`). Rozpor se nikdy nevyřeší potichu, vždy se nahlásí před akcí.
 
 ## 4. Mapa projektu
 ```
 /
 ├── AGENTS.md                 pravidla, kontext, konvence (jediný zdroj)
-├── CLAUDE.md                 odkaz na AGENTS.md
 ├── .memory/                  index.md, pravidla.md, memory.md
-├── .claude/
-│   ├── skills/               lokální skills (zdroj pravdy)
-│   └── security/             bezpečnostní paměť
-├── .agents/skills            symlink na .claude/skills (pro Codex, Cursor a další)
+├── .agents/skills/           lokální skills (pro Codex, Cursor a další)
+├── .security/                bezpečnostní paměť
 └── .codex/                   zatím prázdné
 ```
 

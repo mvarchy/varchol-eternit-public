@@ -86,5 +86,5 @@ Známé výjimky: očekává se `style-src 'unsafe-inline'` (Next.js a Framer Mo
 
 ## Neměnit bez ptaní
 
-- Bez formuláře je rozhodnutí klienta (`CLAUDE.md` §4). Žádný příjem dat od návštěvníků se nepřidává potichu.
+- Bez formuláře je rozhodnutí klienta (`AGENTS.md` §4). Žádný příjem dat od návštěvníků se nepřidává potichu.
 - Žádná třetí strana do CSP bez záznamu v `CSP-LOG.md` a důvodu.

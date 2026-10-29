@@ -1,8 +1,8 @@
 # AGENTS.md: projekt web Michal Varchol
 
-Tento dokument je **jediný zdroj pravdy** pro všechny AI agenty v tomto repozitáři (Codex, Claude Code a další). `CLAUDE.md` na něj pouze odkazuje. Čti ho na začátku každé session. Pokud je v rozporu s jednotlivým zadáním uživatele, má přednost tento dokument, pokud uživatel výslovně neřekne jinak.
+Tento dokument je **jediný zdroj pravdy** pro všechny AI agenty v tomto repozitáři (Codex a další). Čti ho na začátku každé session. Pokud je v rozporu s jednotlivým zadáním uživatele, má přednost tento dokument, pokud uživatel výslovně neřekne jinak.
 
-Kompletní zadání webu je v `varchol-claude-code-prompt.md` v kořeni projektu (platí pro všechny agenty, název souboru je historický). Při jakékoli nejasnosti je zdrojem pravdy.
+Kompletní zadání webu je v `web-project-brief.md` v kořeni projektu. Při jakékoli nejasnosti je zdrojem pravdy.
 
 **Pořadí čtení na začátku session:** `AGENTS.md` (tento) → `.memory/index.md` → `.memory/pravidla.md` → `.memory/memory.md`. Paměťový systém, lokální skills, bezpečnost a SEO jsou v sekci 8.
 
@@ -24,7 +24,7 @@ Uživatel je vlastník a zadavatel projektu, ne junior vývojář. Chovej se jak
 
 1. **Co uživatel chce:** shrň jednou větou.
 2. **Dopad na projekt:** zkontroluj, jestli požadavek:
-   - není v rozporu se strukturou, designem nebo obsahem v `varchol-claude-code-prompt.md`,
+   - není v rozporu se strukturou, designem nebo obsahem v `web-project-brief.md`,
    - nerozbije něco, co funguje (navigace, scrollspy, mapa, galerie, lightbox, responzivita, SEO),
    - neodporuje principu „žádný šablonovitý AI vzhled“ (brief, sekce 0),
    - **potichu nemění tech stack nebo strukturu webu** (sekce 4). Přechod na vícestránkový web, přidání formuláře, backendu nebo nové knihovny = upozornit a nechat rozhodnout uživatele.
@@ -50,7 +50,7 @@ Uživatel je vlastník a zadavatel projektu, ne junior vývojář. Chovej se jak
 - **Tech stack:** Next.js 16 (App Router) + TypeScript, Tailwind CSS, Framer Motion, hosting Vercel. Žádný backend, žádné API klíče.
 - **Struktura:** jednostránkový web (landing page), kotvy `#sluzby`, `#kde-pusobime`, `#proces`, `#reference`, `#galerie`, `#spoluprace`, `#kontakt`, scrollspy. Závazné rozhodnutí.
 - **Kontakt:** **bez formuláře** (rozhodnutí klienta). Jen telefon (hlavní CTA) a e-mail.
-- **Design:** varianta A z Claude Design. Sjednocené **bílé pozadí** na celé stránce, text `#0E120F`, zelená `#5ED33F` (přesný odstín z dodaného obrázku) na plochách, liniích a v hero; text a obrysy `#317C1D` (kontrast 5,2:1 na bílé). Písma Archivo + Manrope. Motiv: vlnovka podle profilu eternitové desky. Mapa = skutečné SVG krajů ČR, tři kraje svítí a reagují na hover. Proces = časová osa ve stylu Vizeon s postupnou animací.
+- **Design:** odsouhlasená varianta A. Sjednocené **bílé pozadí** na celé stránce, text `#0E120F`, zelená `#5ED33F` (přesný odstín z dodaného obrázku) na plochách, liniích a v hero; text a obrysy `#317C1D` (kontrast 5,2:1 na bílé). Písma Archivo + Manrope. Motiv: vlnovka podle profilu eternitové desky. Mapa = skutečné SVG krajů ČR, tři kraje svítí a reagují na hover. Proces = časová osa ve stylu Vizeon s postupnou animací.
 - **Fotky:** podklady jsou v `public/fotky`, projekty mají oddělené `HERO - galerie` a `galerie`. **Nikdy fotobanka**.
 - **Priorita:** originalita bez AI šablony, důvěryhodnost, rychlost i s velkým množstvím fotek.
 
@@ -99,7 +99,7 @@ scripts/          převod GeoJSON → SVG
 
 ## 6. STAV PROJEKTU A ROZHODNUTÍ (PRŮBĚŽNĚ AKTUALIZOVAT)
 
-Aktualizuj na konci každé session, bez ohledu na to, který agent pracoval. Další session si předchozí nepamatuje. Zápisy krátké, jen fakta, s datem a označením agenta (např. `[Codex]`, `[Claude]`).
+Aktualizuj na konci každé session, bez ohledu na to, který agent pracoval. Další session si předchozí nepamatuje. Zápisy krátké, jen fakta, s datem a označením agenta (např. `[Codex]`).
 
 - **Aktuální fáze:** fotky, reference, statistiky a kontakty doplněny a nasazeny na Vercel 2026-10-19; oprava fotocest nasazena v `1c6a3de`. Zbývá pravopis jména a vlastní doména. Detail v `.memory/memory.md`.
 - **Poslední zásadní rozhodnutí:**
@@ -107,7 +107,7 @@ Aktualizuj na konci každé session, bez ohledu na to, který agent pracoval. Da
   - 2026-10-12: formulář na webu nebude, kontakt jen telefonem a e-mailem.
   - 2026-10-12: reference vlastní na webu, ne Google ani Seznam.
   - 2026-10-12: sjednocené bílé pozadí, mapa jako skutečné SVG krajů ČR.
-  - 2026-10-12: AGENTS.md je jediný zdroj pravidel, CLAUDE.md na něj odkazuje.
+  - 2026-10-12: AGENTS.md je jediný zdroj pravidel.
   - 2026-10-19: uživatel potvrdil statistiky 30+ zakázek, 100 % spokojených klientů a 3+ roky praxe; potvrdil také reference a kontaktní údaje.
   - 2026-10-19: sekce O nás byla odstraněna; navigace odpovídá aktuálním sekcím.
 - **Otevřené otázky čekající na klienta:**
@@ -138,24 +138,32 @@ Upozorni na rozpor, vysvětli ho jednou dvěma větami a před nevratnou změnou
 Žádná tvrzení o oprávněních, certifikacích, povoleních, postupech podle legislativy ani bezpečnostních limitech bez podkladu od klienta. Údaje typu „5 let praxe, 30+ projektů“ jsou v poznámkách označené jako příklad („Třeba“) a do potvrzení klientem nejsou fakt. Chybí-li podklad, `[DOPLNIT]` a otázka do `.memory/memory.md`.
 
 ### Lokální skills
-Zdroj pravdy je `.claude/skills/`, `.agents/skills` je symlink na ni (Codex a další nástroje čtou totéž).
+Skills jsou v `.agents/skills/` (Codex a další nástroje čtou totéž).
 
 | Skill | Kdy použít |
 |---|---|
 | `humanize-text-cs` | Psaní a revize jakéhokoli českého textu na web. Povinné pro finální texty. |
 | `seo-complete-optimization` | Každý úkol dotýkající se SEO (meta, struktura, schema, copy). Rámec A až O a „Definition of Done“. |
 | `seo-ai-risk-guard` | Společně s předchozím, web vzniká přes AI. Hlídá kódová a infrastrukturní rizika SEO. |
-| `web-project-brief` | Vytvoření nebo cílená úprava briefu. Existuje-li, upravuj ho cíleně, negeneruj znovu ze šablony. |
-| `project-memory-system` | Jen když se má měnit sám paměťový systém. Ne pro běžnou práci. |
 | `web-security-setup` | Bezpečnostní základ při inicializaci a nasazení (hlavičky pro Next.js na Vercelu, `security.txt`, DNS, CI). |
 | `web-security-review` | Revize kódu před nasazením. Web nemá formulář ani backend, použij hlavně na XSS přes JS, odkazy a skripty třetích stran. |
 | `web-security-audit` | Ověření zabezpečení živé URL po každém nasazení. |
-| `web-security-memory` | Vedení `.claude/security/`, odděleně od `.memory/`. |
+| `web-security-memory` | Vedení `.security/`, odděleně od `.memory/`. |
 
 Globálně jsou k dispozici i další SEO skills, např. `seo-collabim-keyword-loop` (ověření klíčových slov krok za krokem) a `seo-local`.
 
 ### Bezpečnost
-Stav je v `.claude/security/STATE.md`. Před změnou čehokoli bezpečnostního (hlavičky, CSP, nová třetí strana, env proměnné) ho přečti, po změně zapiš do správného souboru ve stejném kroku (`STATE.md`, `DECISIONS.md`, `CSP-LOG.md`, `AUDIT-LOG.md`). `script-src` nikdy nedostane `unsafe-inline` ani `unsafe-eval`, výjimka jen přes nonce. Žádná třetí strana (analytika, embed mapy, widget, CDN) bez záznamu v `CSP-LOG.md`. Žádný `.env` ani klíč v repu. Po nasazení `web-security-audit` a zápis do `AUDIT-LOG.md`.
+Stav je v `.security/STATE.md`. Před změnou čehokoli bezpečnostního (hlavičky, CSP, nová třetí strana, env proměnné) ho přečti, po změně zapiš do správného souboru ve stejném kroku (`STATE.md`, `DECISIONS.md`, `CSP-LOG.md`, `AUDIT-LOG.md`). `script-src` nikdy nedostane `unsafe-inline` ani `unsafe-eval`, výjimka jen přes nonce. Žádná třetí strana (analytika, embed mapy, widget, CDN) bez záznamu v `CSP-LOG.md`. Žádný `.env` ani klíč v repu. Po nasazení `web-security-audit` a zápis do `AUDIT-LOG.md`.
 
 ### SEO
 Úkoly dotýkající se SEO jdou přes `seo-complete-optimization`. U jednostránkového webu: jeden `<h1>`, unikátní `title` a `description`, `LocalBusiness` nebo `Organization` schema jen z ověřených údajů, `sitemap.ts` a `robots.ts`. Klíčová slova se nevymýšlejí, viz otevřené otázky v `.memory/memory.md`.
+
+<!-- BEGIN:nextjs-agent-rules -->
+
+## This is NOT the Next.js you know
+
+This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` (resolved from this file's directory; in monorepos the `next` package may not be visible from the repo root) before writing any code. Heed deprecation notices.
+
+This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
+
+<!-- END:nextjs-agent-rules -->

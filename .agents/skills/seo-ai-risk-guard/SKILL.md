@@ -1,13 +1,13 @@
 ---
 name: seo-ai-risk-guard
-description: "Use this skill whenever building, generating, reviewing, or fixing a website that is created or co-built with AI (Claude Code, Cursor, Lovable, v0, bolt.new, vibecoding workflows in general). AI-built sites carry a systematic, predictable set of SEO failure modes — this skill detects and fixes them BEFORE the site ships. Trigger this skill whenever the user asks to 'udělej web', 'postav landing page', 'vytvoř e-shop/web/aplikaci', 'zkontroluj SEO', 'oprav SEO', 'SEO audit', mentions Next.js/React/Vite project setup, or any time you (Claude) are about to finish scaffolding a new site, page, route, or component and mark it as done. Also trigger proactively at the end of any coding session that touched routing, page templates, metadata, or the build config — treat it as a pre-ship gate, not an optional extra. This skill focuses on the CODE and INFRASTRUCTURE layer; for content/copywriting/keyword strategy use the seo-complete-optimization skill alongside it."
+description: "Use this skill whenever building, generating, reviewing, or fixing a website that is created or co-built with AI (Cursor, Codex, Lovable, v0, bolt.new, vibecoding workflows in general). AI-built sites carry a systematic, predictable set of SEO failure modes — this skill detects and fixes them BEFORE the site ships. Trigger this skill whenever the user asks to 'udělej web', 'postav landing page', 'vytvoř e-shop/web/aplikaci', 'zkontroluj SEO', 'oprav SEO', 'SEO audit', mentions Next.js/React/Vite project setup, or any time you are about to finish scaffolding a new site, page, route, or component and mark it as done. Also trigger proactively at the end of any coding session that touched routing, page templates, metadata, or the build config — treat it as a pre-ship gate, not an optional extra. This skill focuses on the CODE and INFRASTRUCTURE layer; for content/copywriting/keyword strategy use the seo-complete-optimization skill alongside it."
 ---
 
 # SEO Risk Guard pro AI-generované weby
 
 ## Proč tento skill existuje
 
-Weby postavené pomocí AI (Claude Code, Cursor, Lovable, v0, bolt.new a podobné nástroje) mají **systematicky opakující se SEO chyby**, protože AI vždy udělá přesně to, o co je požádaná — a "udělej mi web" typicky neobsahuje SEO požadavky jako implicitní součást zadání. Výsledkem je funkční, hezky vypadající web, který ale:
+Weby postavené pomocí AI (Cursor, Codex, Lovable, v0, bolt.new a podobné nástroje) mají **systematicky opakující se SEO chyby**, protože AI vždy udělá přesně to, o co je požádaná — a "udělej mi web" typicky neobsahuje SEO požadavky jako implicitní součást zadání. Výsledkem je funkční, hezky vypadající web, který ale:
 
 - Google nedokáže pořádně indexovat (CSR bez SSR/SSG)
 - nemá meta tagy, sitemap, robots.txt, schema

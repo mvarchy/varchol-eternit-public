@@ -69,7 +69,7 @@ Distinguish clearly between:
 
 - **Fix now** — exploitable, or a leaked secret.
 - **Fix before launch** — real weakness, no immediate exposure.
-- **Accepted** — a conscious trade-off. These go in `.claude/security/DECISIONS.md`
+- **Accepted** — a conscious trade-off. These go in `.security/DECISIONS.md`
   with a reason, not into a chat message that disappears.
 
 Do not pad the list. Five real findings get fixed; thirty findings including "consider
@@ -77,7 +77,7 @@ adding a comment here" get ignored wholesale, and that is worse than saying noth
 
 ### 4. Record the outcome
 
-Append the review to `.claude/security/AUDIT-LOG.md`: date, scope reviewed, findings,
+Append the review to `.security/AUDIT-LOG.md`: date, scope reviewed, findings,
 what was fixed. If a finding was consciously accepted, it goes to `DECISIONS.md` with an
 expiry date — an accepted risk without a review date is a forgotten risk.
 

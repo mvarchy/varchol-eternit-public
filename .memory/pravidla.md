@@ -7,7 +7,7 @@ Každá změna projektu se zapíše do `memory.md` okamžitě, ve stejném tahu.
 Vznik, přejmenování nebo smazání souboru či složky. Změny obsahu, designu a textů. Technická rozhodnutí (stack, knihovna, hosting, integrace). Cokoli, co se zkusilo a nefungovalo. Cokoli záměrně odložené a proč. Otevřené otázky na uživatele nebo klienta.
 
 ## 3. Co se nezapisuje
-Vyprávění postupu („nejdřív jsem hledal, pak jsem…“). Co je vidět přímo v kódu. Sebechvála a shrnutí typu „vše hotovo a funguje“. Duplikace obsahu z `AGENTS.md` nebo `CLAUDE.md`. Session, ve které se nic nezměnilo.
+Vyprávění postupu („nejdřív jsem hledal, pak jsem…“). Co je vidět přímo v kódu. Sebechvála a shrnutí typu „vše hotovo a funguje“. Duplikace obsahu z `AGENTS.md`. Session, ve které se nic nezměnilo.
 
 ## 4. Formát záznamu v changelogu
 Nejnovější nahoře:
@@ -28,9 +28,8 @@ Vždy absolutní datum. Žádná vymyšlená fakta o klientovi ani firmě. Co ch
 | Otevřené otázky | Vznikne otázka pro uživatele nebo klienta. Zodpovězená se maže, odpověď přejde do rozhodnutí nebo changelogu. |
 | Záměrně nehotové | Něco se úmyslně vynechá. Chrání to před tím, aby to příští session „opravila“ jako chybu. |
 
-## 6. Kdy sahat na AGENTS.md, CLAUDE.md, index.md
+## 6. Kdy sahat na AGENTS.md, index.md
 - `AGENTS.md`: když se změní pravidla, stack, struktura, příkazy nebo konvence. Je to jediný zdroj pravidel pro všechny agenty.
-- `CLAUDE.md`: jen na výslovné rozhodnutí uživatele, má jen odkazovat na `AGENTS.md`.
 - `.memory/index.md`: když vznikne systémový soubor nebo se změní fáze.
 - `.memory/pravidla.md`: jen na výslovný pokyn uživatele.
 
@@ -44,4 +43,4 @@ Když `memory.md` tvrdí něco o souboru, funkci nebo nastavení, na čem se má
 ## 9. Pravidla specifická pro tento projekt
 - Obor je likvidace eternitu a azbestu. **Žádná právní ani odborná tvrzení bez podkladu od klienta** (oprávnění, certifikace, povolení, postupy podle legislativy, bezpečnostní limity). Chybí-li podklad, jde to do Otevřených otázek.
 - Čísla typu „5 let praxe, 30+ projektů“ jsou ze zadání označená jako příklad („Třeba“). Dokud je klient nepotvrdí, nejsou fakt a do webu nepatří.
-- Bezpečnostní změny se kromě `memory.md` zapisují i do `.claude/security/` (viz `web-security-memory`).
+- Bezpečnostní změny se kromě `memory.md` zapisují i do `.security/` (viz `web-security-memory`).

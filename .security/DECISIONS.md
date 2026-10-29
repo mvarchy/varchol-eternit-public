@@ -27,7 +27,7 @@ Revize: při prvním nasazení (založit záznam o zvoleném způsobu CSP).
 ## 002: Bez formuláře, bez backendu
 Datum: 2026-10-12
 Rozhodnutí: Web nebude mít kontaktní formulář ani vlastní API. Kontakt je jen telefon a e-mail.
-Důvod: Rozhodnutí klienta (zdroj: `CLAUDE.md` §4 a §5). Zmenšuje to útočnou plochu na minimum: žádný příjem dat, žádná tajemství, žádný spam z formuláře.
+Důvod: Rozhodnutí klienta (zdroj: `AGENTS.md` §4 a §5). Zmenšuje to útočnou plochu na minimum: žádný příjem dat, žádná tajemství, žádný spam z formuláře.
 Zvažované alternativy: formulář přes serverless funkci a e-mailovou službu (zamítnuto klientem).
 Přijaté riziko: veřejně uvedený telefon a e-mail mohou sbírat roboti.
 Revize: když klient požádá o formulář. Pak spustit `web-security-review` a doplnit rate limit, captchu a validaci na serveru.

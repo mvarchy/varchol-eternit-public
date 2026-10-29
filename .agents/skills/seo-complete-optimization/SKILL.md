@@ -51,7 +51,7 @@ Pokud úkol byl čistě technický (např. jen oprava rychlosti), body 1/2/7 se 
 
 ## Jak pracovat souběžně s ostatními skills
 
-- **`seo-ai-risk-guard`** — použij ho společně, pokud je web postavený/upravovaný přes AI/Claude Code. Ten řeší kódovou a infrastrukturní vrstvu (A, B, C, D, E, G, M z rámce), tento skill pokrývá navíc strategickou a obsahovou vrstvu (F, H, I, J, K, L, N, O) a slouží jako úplný přehled, aby žádný blok nezůstal bez vlastníka.
+- **`seo-ai-risk-guard`** — použij ho společně, pokud je web postavený/upravovaný přes AI. Ten řeší kódovou a infrastrukturní vrstvu (A, B, C, D, E, G, M z rámce), tento skill pokrývá navíc strategickou a obsahovou vrstvu (F, H, I, J, K, L, N, O) a slouží jako úplný přehled, aby žádný blok nezůstal bez vlastníka.
 - Pokud uživatel žádá o dokument/report ze SEO auditu, over si nejdřív, zda existuje `docx` skill pro finální výstup jako Word dokument.
 
 ---

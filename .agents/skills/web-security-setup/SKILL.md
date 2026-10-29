@@ -1,6 +1,6 @@
 ---
 name: web-security-setup
-description: Sets up the complete security baseline for a website project — security headers (CSP, HSTS, X-Frame-Options, X-Content-Type-Options, Referrer-Policy, Permissions-Policy, COOP/CORP) for Vercel, Netlify, Cloudflare Pages, Next.js, Apache or Nginx, plus .gitignore hardening, security.txt, DNS records (CAA, DNSSEC, SPF/DMARC), a CI security workflow, the `.claude/security/` memory files, and the mandatory security blocks in CLAUDE.md and AGENTS.md. Use this skill whenever a new client website or landing page project is being started, whenever an existing project has no security headers yet, and whenever the user mentions "zabezpečení webu", security headers, CSP, hardening, HSTS, clickjacking, or wanting an A+ on securityheaders.com. Trigger it even if the user asks about only one single header — the baseline belongs together and half a baseline gives a false sense of safety. Do NOT use for auditing an already-hardened live site (use web-security-audit) or for reviewing application code (use web-security-review).
+description: Sets up the complete security baseline for a website project — security headers (CSP, HSTS, X-Frame-Options, X-Content-Type-Options, Referrer-Policy, Permissions-Policy, COOP/CORP) for Vercel, Netlify, Cloudflare Pages, Next.js, Apache or Nginx, plus .gitignore hardening, security.txt, DNS records (CAA, DNSSEC, SPF/DMARC), a CI security workflow, the `.security/` memory files, and the mandatory security block in AGENTS.md. Use this skill whenever a new client website or landing page project is being started, whenever an existing project has no security headers yet, and whenever the user mentions "zabezpečení webu", security headers, CSP, hardening, HSTS, clickjacking, or wanting an A+ on securityheaders.com. Trigger it even if the user asks about only one single header — the baseline belongs together and half a baseline gives a false sense of safety. Do NOT use for auditing an already-hardened live site (use web-security-audit) or for reviewing application code (use web-security-review).
 ---
 
 # Web Security Setup
@@ -12,7 +12,7 @@ silently dropped during the next refactor.
 Two things this skill must always produce together:
 
 1. The actual configuration (headers, gitignore, security.txt, CI).
-2. The memory system in `.claude/security/` plus the security block in `CLAUDE.md` and
+2. The memory system in `.security/` plus the security block in
    `AGENTS.md`, so the next session knows what is already in place and why.
 
 Never do only the first. Configuration without a written rationale gets reverted by the
@@ -35,7 +35,7 @@ Before writing anything, establish:
 - **Phase** — greenfield project or a site already in production. On a live site, never
   push an enforcing CSP straight away (see Step 4).
 
-If the project already has `.claude/security/STATE.md`, this is not a fresh setup. Read
+If the project already has `.security/STATE.md`, this is not a fresh setup. Read
 it first, then only fill the gaps and record what changed. Do not overwrite existing
 decisions without asking.
 
@@ -109,33 +109,29 @@ easier — the site is then built to fit the policy instead of the other way rou
 - Add `/.well-known/security.txt` (template in `assets/`). The `Expires` field is
   mandatory — set a reminder, an expired security.txt is worse than none.
 - Copy `security-check.sh` from the `web-security-audit` skill's `scripts/` directory
-  into `.claude/security/security-check.sh` in the project repo, and make it executable.
+  into `.security/security-check.sh` in the project repo, and make it executable.
   This is what lets the check run locally and in CI without depending on where the skill
   itself is installed.
 - Add the CI workflow from `assets/github-workflow-security.yml`: dependency audit,
   secret scanning, and a live header check on every push (it calls
-  `.claude/security/security-check.sh`, so the copy above has to happen first).
+  `.security/security-check.sh`, so the copy above has to happen first).
 - DNS, to be handed to whoever controls the domain: DNSSEC on, a CAA record, and if the
   domain does not send mail, `v=spf1 -all` plus a DMARC record with `p=reject`. Without
   these, anyone can send mail as the client. Record the state in `STATE.md`, since this
   usually depends on someone else and drags on.
 
-## Step 6 — Wire it into memory, CLAUDE.md and AGENTS.md
+## Step 6 — Wire it into memory and AGENTS.md
 
 This is what makes the setup durable. Hand over to the `web-security-memory` skill, or
 do it directly:
 
-- Create `.claude/security/` with `STATE.md`, `DECISIONS.md`, `CSP-LOG.md` and
+- Create `.security/` with `STATE.md`, `DECISIONS.md`, `CSP-LOG.md` and
   `AUDIT-LOG.md` from the templates in the `web-security-memory` skill's assets.
 - Fill `STATE.md` with the real state: platform, headers deployed, CSP version and
   mode, DNS status, open items, threat model.
-- Insert the block from `templates/CLAUDE-security-block.md` into the project's
-  `CLAUDE.md`. If a `CLAUDE.md` from the `web-project-brief` skill already exists, append
-  the block rather than replacing the file.
-- Create `AGENTS.md` from `templates/AGENTS.md` at the repo root, so agents other than
-  Claude Code (Cursor, Codex, Copilot) follow the same rules. `AGENTS.md` holds the full
-  rules; the `CLAUDE.md` block stays short and points at it, which keeps the two from
-  drifting apart.
+- Create `AGENTS.md` from `templates/AGENTS.md` at the repo root (or append the security
+  block if it already exists), so every agent (Cursor, Codex, Copilot) follows the same
+  rules. `AGENTS.md` holds the full rules.
 
 ## Step 7 — Verify and report
 

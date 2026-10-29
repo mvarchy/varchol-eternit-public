@@ -14,7 +14,7 @@ probe of somebody else's. If the target is not the user's, stop and say so.
 
 ## Step 1 — Read the previous state
 
-If `.claude/security/` exists, read `STATE.md` and the last entry in `AUDIT-LOG.md`
+If `.security/` exists, read `STATE.md` and the last entry in `AUDIT-LOG.md`
 first. It tells you what is supposed to be in place, which findings were already
 consciously accepted (`DECISIONS.md`), and what was left open. Reporting a known
 accepted trade-off as a fresh critical finding wastes everyone's time and trains the
@@ -76,7 +76,7 @@ Verifying your own fix is part of the job.
 
 ## Step 5 — Record it
 
-Append to `.claude/security/AUDIT-LOG.md`:
+Append to `.security/AUDIT-LOG.md`:
 
 ```markdown
 ## YYYY-MM-DD — audit (<who/what triggered it>)
