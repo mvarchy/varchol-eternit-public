@@ -56,6 +56,12 @@ Aby to příští session neopravila jako chybu.
 ## Changelog
 Nejnovější nahoře.
 
+### 2026-11-04: Nový GitHub repozitář
+- **Co:** Založen veřejný repozitář `sobotkakrystof5-png/varchol-eternit-public`, `origin` přepnut na něj a pushnut `main`. Původní `eternit-web` už na GitHubu neexistoval.
+- **Proč:** Na pokyn uživatele.
+- **Dopad:** Repo je veřejné, včetně `.memory/`, `.security/` a briefu. Napojení Vercelu na nový repozitář neověřeno.
+- **Soubory:** jen git remote, `.memory/memory.md`
+
 ### 2026-10-29: Úklid souborů specifických pro jeden nástroj
 - **Co:** Smazán soubor s pokyny pro konkrétní nástroj a jeho složka s konfigurací: skills přesunuty do `.agents/skills/` (už ne symlink), bezpečnostní paměť do `.security/`. Skills `project-memory-system` a `web-project-brief` odstraněny. Z `AGENTS.md`, `.memory/`, `.security/`, `web-project-brief.md` a zbylých skills odstraněny související zmínky, cesty a odkazy opraveny.
 - **Proč:** Na výslovný pokyn uživatele.
