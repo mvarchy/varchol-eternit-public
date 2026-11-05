@@ -56,6 +56,12 @@ Aby to příští session neopravila jako chybu.
 ## Changelog
 Nejnovější nahoře.
 
+### 2026-11-05: Hero na mobilu ukazuje pytel a slunce
+- **Co:** Pod `lg` má fotka hero `object-position` 100 % 50 % (dřív 62 % 50 %) a výšku `min(70vw, 60svh)` (dřív 75vw). Tmavý přechod do `ink` začíná až na 75 % výšky (dřív 60 %). Od `lg` beze změny.
+- **Proč:** Klient chtěl na mobilu vidět pytel s nápisem AZBEST a slunce jako na desktopu. Při 75vw by pozice 100 % uřízla pracovníkovi nohu, proto je pruh nižší.
+- **Dopad:** Jen hero do 1023 px: vidět je pracovník celý, pytel s nápisem i slunce. Ověřeno headless Chrome v iframu 390 a 360 px. `npm run build` vygeneruje stránku, ale končí kódem 1 kvůli upozornění na zranitelnost Next.js 16.4.0, i bez této změny.
+- **Soubory:** `src/components/sections/Hero.tsx`
+
 ### 2026-11-04: Nový GitHub repozitář
 - **Co:** Založen veřejný repozitář `sobotkakrystof5-png/varchol-eternit-public`, `origin` přepnut na něj a pushnut `main`. Původní `eternit-web` už na GitHubu neexistoval.
 - **Proč:** Na pokyn uživatele.

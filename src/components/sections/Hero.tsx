@@ -11,11 +11,11 @@ const lines = ["Likvidace", "eternitu", "a azbestu"];
 export function Hero() {
   return (
     <section aria-labelledby="hero-title" className="relative isolate mt-[4.5rem] overflow-hidden bg-ink text-paper">
-      <div className="relative h-[min(75vw,60svh)] min-h-56 [--hero-pos:62%_50%] lg:[--hero-pos:100%_0%] lg:absolute lg:inset-0 lg:h-auto lg:min-h-0">
+      <div className="relative h-[min(70vw,60svh)] min-h-56 [--hero-pos:100%_50%] lg:[--hero-pos:100%_0%] lg:absolute lg:inset-0 lg:h-auto lg:min-h-0">
         <Photo src="/fotky/hero/hero-zakazka.webp" objectPosition="var(--hero-pos)" label="Úvodní fotka" alt="" sizes="100vw" tone="dark" fill preload />
         <div
           aria-hidden="true"
-          className="absolute inset-0 bg-linear-to-b from-transparent from-60% to-ink lg:bg-linear-100 lg:from-ink/55 lg:from-0% lg:via-ink/20 lg:to-transparent"
+          className="absolute inset-0 bg-linear-to-b from-transparent from-75% to-ink lg:bg-linear-100 lg:from-ink/55 lg:from-0% lg:via-ink/20 lg:to-transparent"
         />
       </div>
 
